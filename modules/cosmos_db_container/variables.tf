@@ -1,11 +1,17 @@
-﻿variable "cosmos_container_name" {
+variable "cosmos_container_name" {
   description = "Name of the Cosmos DB No SQL Container"
+  type        = string
+}
+
+variable "cosmos_database_id" {
+  description = "The ID of the Cosmos DB SQL Database. If provided, skips data lookup."
   type        = string
 }
 
 variable "cosmos_database_name" {
   description = "Name of the Cosmos DB Database"
   type        = string
+  default     = null
 }
 
 variable "cosmos_account_name" {
