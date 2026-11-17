@@ -1,4 +1,4 @@
-﻿variable "tenant_id" {
+variable "tenant_id" {
   description = "The Tenant ID for Azure authentication"
   type        = string
 }
