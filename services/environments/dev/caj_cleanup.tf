@@ -19,13 +19,15 @@ module "container_app_job" {
 
   # identity_type = "UserAssigned"
   # identity_ids  = [data.azurerm_user_assigned_identity.acrpull_uami.id]
-  identity_type = null
-  identity_ids  = []
+  # identity_type = null
+  # identity_ids  = []
+
 
   registries = [
     {
-      server   = var.acr_login_server
-      identity = data.azurerm_user_assigned_identity.acrpull_uami.id
+      server = var.acr_login_server
+      # identity = data.azurerm_user_assigned_identity.acrpull_uami.id
+      identity = "system-environment"
     }
   ]
 
@@ -37,6 +39,6 @@ module "container_app_job" {
   tags = {
     Environment = "dev"
     CreatedBy   = "Terraform@123"
-    Project     = "BoardWorks-AI"
+    Project     = "Boardworks-AI"
   }
 }

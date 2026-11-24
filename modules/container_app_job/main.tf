@@ -7,6 +7,13 @@ resource "azurerm_container_app_job" "this" {
   replica_timeout_in_seconds   = var.replica_timeout_in_seconds
   replica_retry_limit          = var.replica_retry_limit
 
+  lifecycle {
+    ignore_changes = [
+      template[0].container[0].env,
+      template[0].container[0].command,
+      template[0].container[0].args
+    ]
+  }
   dynamic "identity" {
     for_each = var.identity_type != null ? [1] : []
     content {
