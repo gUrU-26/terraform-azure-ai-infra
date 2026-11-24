@@ -37,5 +37,6 @@ module "container_app_job" {
   tags = {
     Environment = "dev"
     CreatedBy   = "Terraform@123"
+    Project     = "BoardWorks-AI"
   }
 }
